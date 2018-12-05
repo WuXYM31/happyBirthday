@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To 长臂猿狒狒</title>
+    <audio autoplay id="audio1"><source src="mus/moonflow.mp3"></audio>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <script src="jquery-3.2.1.min.js"></script>
+  </head>
+<body id="myBody">
+<audio id="bgmus" src="#" autoplay="true" loop="loop"></audio>
+<div id="wrapper" style="text-align: center">
+  <div class="viewport">
+    <div class="cube">
+      <div class="side">
+        <div class="cube-image"  active><a onclick="abc()">祝</a></div>
+      </div>
+      <div class="side">
+        <div class="cube-image"><a onclick="showfirst()">乐</a></div>
+      </div>
+      <div class="side">
+        <div class="cube-image"><a onclick="showsecond()">生</a></div>
+      </div>
+      <div class="side">
+        <div class="cube-image"><a onclick="showthird()">日</a></div>
+      </div>
+      <div class="side">
+        <div class="cube-image"><a onclick="showfourth()">快</a></div>
+      </div>
+      <div class="side">
+        <div class="cube-image"><a onclick="you()">你</a></div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+<!--   <img id="myImg" src="img/test1.jpg"> -->
+<video id="myVid" width="320" height="240" autoplay>
+  <source src="vid/#.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+<footer style="  position:fixed;
+  width:100%;
+  bottom:0;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  text-align:center;">
+  <p><img src="img/gift.svg"> <strong>From Sherry</strong></p>
+</footer>
+<script src="animation.js"></script>
+<script type="text/javascript">
+var bgimg = ["img/t2.gif", "img/t3.gif"];
+window.onload = function(){
+  var i=0;
+  var themus=document.getElementById('bgmus');
+  themus.volume=0;
+  var theimg=document.getElementById('myBody');
+  document.getElementById('myVid').addEventListener('ended',recover,false);
+  function recover(){
+    document.getElementById('audio1').volume = 1;
+  };
+  theimg.style.background = 'url(img/t2.gif)';
+    function time(){
+      i++;
+      i=i%2;
+      theimg.style.background="url("+bgimg[i]+")";
+    }
+    setInterval(time,3000);
+};
+</script>
+</body>
+</html>
